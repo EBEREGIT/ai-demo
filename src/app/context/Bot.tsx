@@ -14,8 +14,15 @@ type BotProviderProps = {
 export const Bot = createContext({} as BotType);
 
 export default function BotProvider({ children }: BotProviderProps) {
-  const { message, setChats, chats, setMessage, setIsLoading, setFeedback } =
-    useContext(Variable);
+  const {
+    message,
+    setChats,
+    chats,
+    setMessage,
+    setIsLoading,
+    setFeedback,
+    url,
+  } = useContext(Variable);
 
   const reset = () => {
     setMessage("");
@@ -33,7 +40,7 @@ export default function BotProvider({ children }: BotProviderProps) {
     try {
       const query = await fetch(`api/bot/customChat`, {
         method: "post",
-        body: JSON.stringify({ input: message }),
+        body: JSON.stringify({ input: message, url }),
       });
 
       const result = await query.json();

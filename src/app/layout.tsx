@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const runtime = "edge";
 
 export const metadata: Metadata = {
-  title: "AI Architect",
-  description: "Hakim's Assistant. Ask Anything. Get a feedback!",
+  title: "AI Demo",
+  description: "Accepts a Valid URL and provides feedback based on the URL",
 };
 
 export default function RootLayout({

@@ -8,15 +8,16 @@ import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 
 export async function POST(request: Request) {
+  const { input, url } = await request.json();
+
   const chatModel = new ChatOpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY,
   });
   const embeddings = new OpenAIEmbeddings();
   const splitter = new RecursiveCharacterTextSplitter();
-  const loader = new CheerioWebBaseLoader("https://www.fmhud.gov.ng");
+  const loader = new CheerioWebBaseLoader(url);
 
   try {
-    const { input } = await request.json();
     const docs = await loader.load();
     const splitDocs = await splitter.splitDocuments(docs);
 
