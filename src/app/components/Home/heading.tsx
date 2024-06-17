@@ -31,7 +31,7 @@ export default function Heading() {
       >
         <Box component={"a"} href="/">
           <Typography variant="body1" color={"white"}>
-            AI Demo Bot
+            Custom Demo Bot
           </Typography>
         </Box>
 
