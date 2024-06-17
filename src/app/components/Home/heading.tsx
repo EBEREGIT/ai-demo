@@ -37,6 +37,37 @@ export default function Heading() {
 
         <ModeToggle />
       </Box>
+
+      <Box
+        component={"section"}
+        sx={{
+          backgroundColor: mode
+            ? theme.palette.secondary.main
+            : theme.palette.primary.main,
+          textAlign: "center",
+          py: 1,
+        }}
+      >
+        <Box
+          component={"a"}
+          target="_blank"
+          href="https://linktr.ee/ebereplenty"
+          sx={{
+            textDecoration: "none",
+            color: theme.gray.bg1,
+          }}
+        >
+          Created by{" "}
+          <Box
+            component={"span"}
+            sx={{
+              fontStyle: "italic",
+            }}
+          >
+            Njoku S. E.
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 }
