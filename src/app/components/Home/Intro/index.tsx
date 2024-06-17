@@ -10,7 +10,7 @@ import { isUrl } from "@/utils/helpers";
 
 export default function Intro() {
   const { setType, setChats, url, setUrl } = useContext(Variable);
-  const { theme } = useContext(ThemeContext);
+  const { theme, isLessThanMD } = useContext(ThemeContext);
 
   const style = {
     my: 2.5,
@@ -18,6 +18,7 @@ export default function Intro() {
     backgroundColor: theme.gray.bg2,
     px: 10,
     py: 2,
+    width: isLessThanMD ? "100%" : "50%",
   };
 
   return (
@@ -29,8 +30,9 @@ export default function Intro() {
         justifyContent: "center",
         display: "flex",
         height: "100vh",
-        width: "50%",
+        width: isLessThanMD ? "100%" : "50%",
         m: "auto",
+        px: 2.5,
       }}
     >
       <Input

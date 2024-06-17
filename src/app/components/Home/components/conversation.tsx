@@ -28,7 +28,7 @@ export default function Conversation(props: { conversations: ReactNode }) {
       elevation={0}
       square
     >
-      <Box component={"div"} sx={{ py: 5, width: "100%", px: 2.5 }}>
+      <Box component={"div"} sx={{ py: 10, width: "100%", px: 2.5 }}>
         {conversations}
 
         {isLoading ? <Loading sx={assistantMessageStyle} /> : ""}
